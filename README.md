@@ -4,7 +4,7 @@ Bem-vindos ao meu repositório do curso Licenciatura em Engenharia de Computador
 
 Este espaço é mantido pela aluna Catarina Monteiro Rabaça (⌐■_■).
 
-Aqui encontras vários recursos como testes, exames, projetos, etc...
+Aqui encontras vários recursos como testes, exames, projetos, ...
 
 *Falta adicionar o diretório com os recursos de ISD (nota-16).
 
