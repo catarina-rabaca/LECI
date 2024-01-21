@@ -1,7 +1,9 @@
 # Repositório do Curso LECI
 
 Bem-vindos ao meu repositório do curso Licenciatura em Engenharia de Computadores e Informática (LECI) :D
+
 Este espaço é mantido pela aluna Catarina Monteiro Rabaça.
+
 Aqui encontras vários recursos como testes, exames, projetos, etc...
 
 ---
