@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+      <title>Quotidiano</title>
+      <link rel="stylesheet" href="css/quontidiano.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-***SuaHashAqui***" crossorigin="anonymous" />
+
+   </head>
+
+   <body>
+   
+         <div class="banner">
+             <div class="navbar">
+               <a href="index.html"><img src="imagens/logo.png" class="logo"></a>
+                 <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="analise.html">Análise histórica</a></li>
+                     <li><a href="contribuintes.html">Contribuintes</a></li>
+                     <li><a href="combate.html">Combate</a></li>
+                     <li><a href="sobrenos.html">Sobre nós</a></li>
+                 </ul>
+             </div>
+         </div>
+
+
+   
+      <section>
+         <div class="row">
+            <h1>Quotidiano</h1>
+         </div>
+         <div class="row"></div>
+
+         <input type="checkbox" id="check">
+         <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+         </label>
+         
+         <div class="sidebar">
+            <header>Conteúdos</header>
+            <ul>
+               <li><a href="industria.html"><i class="fas fa-stream"></i>Indústria</a></li>
+               <li><a href="quontidiano.html"><i class="fas fa-stream"></i>Quotidiano</a></li>
+            </ul>
+         </div>
+
+         <section class="texto1 mostrar-ani">
+            <div class="animar">
+               <div class="container1">
+                  <p>
+                     O Estilo de vida do ser humano surge também como uma força significativa
+                     nas Alterações Climáticas, influenciando o equilíbrio do sistema climático da Terra. As escolhas
+                     que tomamos e as ações que fazemos diariamente têm também um papel crucial
+                     neste fenômeno global.
+                              <br>
+                              <br>
+                     O aumento das nossas demandas energéticas, devido ao crescimento 
+                     populacional global, provocou uma dependência excessiva dos combustíveis fósseis,
+                     atividades diária como conduzir e a utilização de ar condicionado, resultam na
+                     emissão de grandes quantidades de gases de Efeito de Estufa que contribuem para o aumento desta.
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <section class="texto2">
+            <div class="animar">
+               <div class="container2">
+                  <p>
+                     Além disso, os nossos elevados padrões de consumo resultam numa produção
+                     em massa e por consequência num esgotamento dos recursos que a Terra não
+                     consegue regenerar à mesma velocidade que os consumimos, e muitas desses
+                     processos produtivos libertam grandes quantidades de CO2, CH4, e consomem
+                     vastas quantidades de energia, aumentando a pegada de carbono e agravando o
+                     problema.
+                     <br>
+                     <br>
+                     A gestão inadequada de resíduos, caracterizada pelo uso excessivo de materiais não degradáveis, como plástico, e pela eliminação inadequada de resíduos,
+                     resulta em poluição que perturba o equilíbrio ecológico da Terra. Estas práticas
+                     do nosso estilo de vida contribuem para os impactos negativos que influenciam as Alterações Climáticas.
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <section class="grafico mostrar-ani">
+            <div class="animar">
+               <div id="chartContainer" onclick="hideShow()"></div>
+            </div>
+         </section>
+
+         <section class="texto3">
+            <div class="container3" id="container3">
+               <p>
+                  Como se pode ver as escolhas que fazemos diariamente têm sim um impacto
+                  nas Alterações Climáticas, por isso somos todos responsáveis pelo que se tá fazendo sentir.
+               </p>
+            </div>
+         </section>
+
+
+
+
+
+
+         <script src="js/canvasjs.min.js"></script>
+         <script src="js/quontidiano.js"></script>
+   </body>
+</html>
