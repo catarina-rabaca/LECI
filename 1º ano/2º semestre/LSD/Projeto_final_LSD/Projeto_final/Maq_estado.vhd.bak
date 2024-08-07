@@ -1,0 +1,85 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Maq_estado is
+    port(
+        clk                      : in  std_logic;
+        temperatura              : in  std_logic_vector(7 downto 0);
+        tempococcao              : in  std_logic_vector(7 downto 0);
+        tempopre_aquecimento     : in  std_logic_vector(7 downto 0);
+        saidatemperatura         : out std_logic_vector(7 downto 0);
+        saidatempococcao         : out std_logic_vector(7 downto 0);
+        saidatempopre_aquecimento: out std_logic_vector(7 downto 0);
+        enableairaberta          : in  std_logic;
+        enablepreacabou          : in  std_logic;
+		  enablecoccaoacabou       : in  std_logic;
+		  enabletempraacabou       : in  std_logic;
+        enableON                 : in  std_logic;
+        enableescolhafeita       : in  std_logic
+    );
+end Maq_estado;
+
+architecture Behavioral of Maq_estado is
+    type TState is (IDLE, PREAQ, AIRABERTA, AIRFECHADA, COCCAO, ARREFECIMENTO);
+    signal s_currentState, s_nextState : TState := IDLE;
+
+begin
+    sync_proc : process(clk)
+    begin
+        if rising_edge(clk) then
+            if enableON = '1' then
+                s_currentState <= s_nextState;
+            end if;
+        end if;
+    end process;
+
+    comb_proc : process(s_currentState, enabletempraacabou,enablepreacabou,enablecoccaoacabou, enableairaberta, enableescolhafeita, temperatura, tempococcao, tempopre_aquecimento)
+    begin
+        s_nextState <= s_currentState;
+        
+        
+        saidatempococcao <= (others => '0');
+        saidatemperatura <= (others => '0');
+        saidatempopre_aquecimento <= (others => '0');
+
+        case s_currentState is
+            when IDLE =>
+                if enableescolhafeita = '1' and enableairaberta = '0' then
+                    s_nextState <= PREAQ;
+                end if;
+
+            when PREAQ =>
+                saidatempopre_aquecimento <= tempopre_aquecimento;
+                if enablepreacabou = '1' and enableairaberta = '0' then
+                    s_nextState <= AIRABERTA;
+                end if;
+
+            when AIRABERTA =>
+                if enableairaberta = '1' then
+                    s_nextState <= AIRFECHADA;
+                end if;
+
+            when AIRFECHADA =>
+                if enableairaberta = '0' and enablecoccaoacabou = '0'then
+                    s_nextState <= COCCAO;
+					 elsif enableairaberta = '0' and enablecoccaoacabou = '1' then
+						  s_nextState <= ARREFECIMENTO;
+                end if;
+
+            when COCCAO =>
+                saidatempococcao <= tempococcao;
+                if enablecoccaoacabou = '1' then
+                    s_nextState <= AIRABERTA;
+                end if;
+
+            when ARREFECIMENTO =>
+                saidatemperatura <= temperatura;
+                if enabletempraacabou = '1' then
+                    s_nextState <= AIRABERTA;
+                end if;
+
+            when others =>
+                s_nextState <= IDLE;
+        end case;
+    end process;
+end Behavioral;

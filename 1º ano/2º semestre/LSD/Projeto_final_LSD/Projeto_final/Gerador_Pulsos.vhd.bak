@@ -1,0 +1,28 @@
+entity Gerador_Pulsos is
+    generic(ciclos : positive := 50_000_000); -- 50 MHz clock, 1 second pulse
+    port(
+        clk : in  std_logic;
+        pulso   : out std_logic := '0'
+    );
+end Gerador_Pulsos;
+
+architecture behavioral of Gerador_Pulsos is
+    signal s_contador : natural range 0 to ciclos-1 := 0;
+    signal s_pulse    : std_logic := '0';
+begin
+    count_proc : process(clk)
+    begin
+        if rising_edge(clk) then
+            if s_contador >= ciclos-1 then
+                s_contador <= 0;
+                s_pulse <= '1';
+            else
+                s_contador <= s_contador + 1;
+                s_pulse <= '0';
+            end if;
+        end if;
+    end process;
+
+    pulso <= s_pulse;
+
+end behavioral;

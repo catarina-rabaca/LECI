@@ -1,0 +1,38 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+--Controlador de temperatura ajustável em incrementos de 10 graus, entre 20 e 200 graus,
+-- ativado por sinais de habilitação e controlado por botões de aumento e diminuição, convertendo a temperatura para representação binária de 8 bits.
+
+entity Temperatura_User is
+    port (
+        enable:       in  std_logic;
+        clk:          in  std_logic;
+        up:           in  std_logic;
+        down:         in  std_logic;
+        temperatura:  out std_logic_vector(7 downto 0)
+    );
+end Temperatura_User;
+
+architecture behavioral of Temperatura_User is
+    signal temp: integer range 20 to 200 := 20;							-- A temperatura começa em 20 obrigatoriamente, e esta compreendida entre 20 e 200 graus.
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if enable = '1' then
+				
+                if up = '0' and temp < 200 then
+                    temp <= temp + 10;										-- Incrementa 10 graus caso a temperatura seja menor que 200 e estejamos a precionar a key
+						  
+                elsif down = '0' and temp > 20 then					-- Decrementa 10 graus caso a temperatura seja maior que 20  e estejamos a precionar a outra key
+                    temp <= temp - 10;
+						  
+                end if;
+            end if;
+        end if;
+    end process;
+
+    temperatura <= std_logic_vector(to_unsigned(temp, 8)); 			-- Converte para binario de 8 bits
+end behavioral;

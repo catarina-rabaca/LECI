@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="css/analise.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="index.html"><img src="imagens/logo.png" class="logo"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="analise.html">Análise histórica</a></li>
+                <li><a href="contribuintes.html">Contribuintes</a></li>
+                <li><a href="combate.html">Combate</a></li>
+                <li><a href="sobrenos.html">Sobre nós</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="passado">
+        <h1>Passado</h1>
+        <p>Várias transformações ocorreram ao longo da história geológica do sistema
+            climático da Terra. Estas mudanças testemunham a dinâmica natural do clima
+            do nosso planeta e ocorreram muito antes do surgimento da humanidade.</p>   
+        <p>Grandes partes do globo já foram cobertas por enormes camadas de gelo e as
+            temperaturas aumentaram durante os tempos pré-históricos. A órbita da Terra
+            e a atividade vulcânica impulsionaram principalmente as flutuações climáticas
+            entre as eras glaciais e os tempos interglaciais.</p>
+        <p>Há cerca de 500 milhões de anos atrás, altura onde ocorria o período Câmbrico, foi uma época em que a Terra ficou excecionalmente quente. A causa
+            deste aquecimento extremo foi atribuída a um aumento astronómico na concentração de Dióxido de carbono (CO2), na atmosfera, já que naquela época o
+            planeta enfrentava elevados níveis de atividade vulcânica.
+            </p>
+        <p>Compreender a presença histórica das mudanças climáticas na Terra é importante para reconhecer que elas existiam antes dos humanos. Sendo assim,
+            para prever e aliviar os efeitos futuros das alterações climáticas, é necessário sermos portadores
+            do contexto histórico da Terra.</p>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="co2Chart" width="600" height="400"></canvas>
+    </div>
+
+    <script>
+        const periodosGeologicos = ["Câmbrico", "Ordovícico", "Silúrico", "Devónico", "Carbónico", "Pérmico", "Triássico", "Jurássico", "Cretácico", "Terciário", "Quaternário"];
+        const concentracoesCO2 = [5750, 4300, 4750, 3100, 1150, 1700, 1875, 2225, 2000, 575, 298];
+
+        const ctx = document.getElementById('co2Chart').getContext('2d');
+        const co2Chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: periodosGeologicos,
+                datasets: [{
+                    label: 'Concentração de CO2 ao longos dos períodos geológicos (ppm)',
+                    data: concentracoesCO2,
+                    backgroundColor: '#89c284',
+                    borderColor: '#ccffc7',
+                    borderWidth: 2,
+                    hoverBackgroundColor: '#ccffc7',
+                    hoverBorderColor: '#89c284',
+                    hoverBorderWidth: 3
+
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: 'white' 
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white' 
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.1)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'rgb(153,255,153)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <div class="texto-calculadora">
+        <p> Falando de CO2, aproveita e calcula a tua pegada de carbono, clicando <a href="calc_carbono.html">aqui</a>.</p>
+    </div>
+
+    <div class="presente">
+        <h1>Presente</h1>
+        <p>No atual panorama climático, presenciamos mudanças de grande magnitude
+            nas condições atmosféricas globais, refletindo um aumento incontestável das
+            temperaturas em todas as partes do mundo. Este fenómeno, que transcende
+            as flutuações naturais do clima, carrega consigo uma característica marcante:
+            a ação humana emergiu como uma força determinante, traçando um capítulo
+            crucial na história climática de nosso planeta</p>
+        <p>Um aumento médio de temperatura emergiu porém este não pode ser meramente atribuído ao ciclo natural das estações. Ao contrário das eras passadas,
+            onde as mudanças climáticas seguiam ritmos geológicos, agora presenciamos um
+            impacto acelerado, impulsionado principalmente por nós (seres humanos).</p>
+        <p>Secas em larga escala e inundações avassaladoras, são muito mais do que
+            desastres ocasionais, são experiências que redefinem a vida de pessoas ao redor
+            do mundo, existem cada vez mais desastre ao redor do globo provocados ou até
+            mesmo agravados pela crise climática. A imprudência climática tem congestionado a vida de todos os seres que habitam este astro, e é possível já evidenciar
+            todos os problemas coadjuvantes aos desastres climáticos.</p>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            var chartWidth = window.innerWidth * 0.75;
+            var chartHeight = chartWidth * 0.75;
+
+            var data = {
+                labels: ['1950', '1955', '1960', '1965', '1970', '1975', '1980', '1985', '1990', '1995', '2000', '2005', '2010', '2015', '2021'],
+                datasets: [{
+                    label: 'Aumento das Temperaturas Médias Globais',
+                    data: [0.1, -0.1, 0.3, 0.28, 0.12, 0.08, 0.61, 0.37, 0.75, 0.60, 0.63, 0.92, 1, 1.3, 1.16],
+                    borderColor: 'rgb(76, 156, 76)',
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    pointBackgroundColor: 'rgb(0, 251, 255)',
+                    fill: false,
+                    tension: 0.3,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: 'rgb(0, 251, 255)',
+                    pointHoverBorderColor: 'rgb(76, 156, 76)',
+                    pointHoverBorderWidth: 3,
+                }]
+            };
+
+            var options = {
+                scales: {
+                    x: [{
+                        type: 'linear',
+                        position: 'bottom',
+                        ticks: {
+                            color: 'white'
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.1)' 
+                        }
+                    }],
+                    y: [{
+                        ticks: {
+                            color: 'white'
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.1)' 
+                        }
+                    }]
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'rgb(153,255,153)'
+                        }
+                    }
+                }
+            };
+
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+
+            myChart.canvas.parentNode.style.width = chartWidth + 'px';
+            myChart.canvas.parentNode.style.height = chartHeight + 'px';
+        });
+    </script>
+
+    <div class="futuro">
+        <h1>Futuro</h1>
+        <p>Quanto ao futuro, apesar de nada ser certo, muitos problemas são previsíveis. Assim sendo, é possível confirmar, através de algumas pesquisas científicas,
+            verificar que toda a problemática atual está diretamente conectada com os distúrbios esperados para o futuro.</p>
+        <p>A situação encontra-se tão grave que a adoção de políticas ambientais drásticas é atualmente a única maneira
+             de evitar o aumento exponencial da temperatura terrestre.</p>
+        <p>Para além da temperatura, também está prevista a perda de grande parte da biodiversidade terrestre, apresentando-se como maioria, o número de animais
+            domesticados seguidos da raça humana, entrando a vida selvagem em decadência, (o que provoca o então decréscimo de biodiversidade)</p>
+    </div>
+
+    <div class="leopardo">
+        <img src="imagens/leopardo_de_amur.jpg" alt="Leopardo-de-amur">
+        <div class="overlay">
+            <div class="texto">
+                <h1>Leopardo-de-amur</h1>
+                <p> Provenientes do oriente, mais precisamente das zonas norte da China, oriente russo e Coreia, vêm sofrendo um declínio no número de indivíduos desde 1970, estimando-se que atualmente restem apenas 85 leopardos-de-amur.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

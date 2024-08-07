@@ -1,0 +1,95 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity Bin2BCD is
+    Port (
+        temper     : in  std_logic_vector(7 downto 0);
+        preaq      : in  std_logic_vector(7 downto 0);
+        tempo      : in  std_logic_vector(7 downto 0);
+        tempr_out  : out std_logic_vector(11 downto 0);
+        preaq_out  : out std_logic_vector(7 downto 0);
+        tempo_out  : out std_logic_vector(7 downto 0)
+    );
+end Bin2BCD;
+
+architecture Behavioral of Bin2BCD is
+begin
+    process(temper, preaq, tempo)
+    begin
+        -- Conversão de Temperatura
+        case temper is
+            when "00010100" => tempr_out <= "000000100000"; -- 20
+            when "00011110" => tempr_out <= "000000110000"; -- 30
+            when "00101000" => tempr_out <= "000001000000"; -- 40
+            when "00110010" => tempr_out <= "000001010000"; -- 50
+            when "00111100" => tempr_out <= "000001100000"; -- 60
+            when "01000110" => tempr_out <= "000001110000"; -- 70
+            when "01010000" => tempr_out <= "000010000000"; -- 80
+            when "01011010" => tempr_out <= "000010010000"; -- 90
+            when "01100100" => tempr_out <= "000100000000"; -- 100
+            when "01101110" => tempr_out <= "000100010000"; -- 110
+            when "01111000" => tempr_out <= "000100100000"; -- 120
+            when "10000010" => tempr_out <= "000100110000"; -- 130
+            when "10001100" => tempr_out <= "000101000000"; -- 140
+            when "10010110" => tempr_out <= "000101010000"; -- 150
+            when "10100000" => tempr_out <= "000101100000"; -- 160
+            when "10101010" => tempr_out <= "000101110000"; -- 170
+            when "10110100" => tempr_out <= "000110000000"; -- 180
+            when "10111110" => tempr_out <= "000110010000"; -- 190
+            when "11001000" => tempr_out <= "001000000000"; -- 200
+            when others     => tempr_out <= "111111111111"; -- Valor padrão (inválido)
+        end case;
+
+        -- Conversão de Pré-aquecimento
+        case preaq is
+            when "00000000" => preaq_out <= "00000000"; -- 0
+            when "00000001" => preaq_out <= "00000001"; -- 1
+            when "00000010" => preaq_out <= "00000010"; -- 2
+            when "00000011" => preaq_out <= "00000011"; -- 3
+            when "00000100" => preaq_out <= "00000100"; -- 4
+            when "00000101" => preaq_out <= "00000101"; -- 5
+            when "00000110" => preaq_out <= "00000110"; -- 6
+            when "00000111" => preaq_out <= "00000111"; -- 7
+            when "00001000" => preaq_out <= "00001000"; -- 8
+            when "00001001" => preaq_out <= "00001001"; -- 9
+            when "00001010" => preaq_out <= "00010000"; -- 10
+            when others     => preaq_out <= "11111111";  -- Valor padrão (inválido)
+        end case;
+
+        -- Conversão de Tempo
+        case tempo is
+            when "00000001" => tempo_out <= "00000001"; -- 1
+            when "00000010" => tempo_out <= "00000010"; -- 2
+            when "00000011" => tempo_out <= "00000011"; -- 3
+            when "00000100" => tempo_out <= "00000100"; -- 4
+            when "00000101" => tempo_out <= "00000101"; -- 5
+            when "00000110" => tempo_out <= "00000110"; -- 6
+            when "00000111" => tempo_out <= "00000111"; -- 7
+            when "00001000" => tempo_out <= "00001000"; -- 8
+            when "00001001" => tempo_out <= "00001001"; -- 9
+            when "00001010" => tempo_out <= "00010000"; -- 10
+            when "00001011" => tempo_out <= "00010001"; -- 11
+            when "00001100" => tempo_out <= "00010010"; -- 12
+            when "00001101" => tempo_out <= "00010011"; -- 13
+            when "00001110" => tempo_out <= "00010100"; -- 14
+            when "00001111" => tempo_out <= "00010101"; -- 15
+            when "00010000" => tempo_out <= "00010110"; -- 16
+            when "00010001" => tempo_out <= "00010111"; -- 17
+            when "00010010" => tempo_out <= "00011000"; -- 18
+            when "00010011" => tempo_out <= "00011001"; -- 19
+            when "00010100" => tempo_out <= "00100000"; -- 20
+            when "00010101" => tempo_out <= "00100001"; -- 21
+            when "00010110" => tempo_out <= "00100010"; -- 22
+            when "00010111" => tempo_out <= "00100011"; -- 23
+            when "00011000" => tempo_out <= "00100100"; -- 24
+            when "00011001" => tempo_out <= "00100101"; -- 25
+            when "00011010" => tempo_out <= "00100110"; -- 26
+            when "00011011" => tempo_out <= "00100111"; -- 27
+            when "00011100" => tempo_out <= "00101000"; -- 28
+            when "00011101" => tempo_out <= "00101001"; -- 29
+            when "00011110" => tempo_out <= "00110000"; -- 30
+            when others     => tempo_out <= "11111111";  -- Valor padrão (inválido)
+        end case;
+    end process;
+end Behavioral;

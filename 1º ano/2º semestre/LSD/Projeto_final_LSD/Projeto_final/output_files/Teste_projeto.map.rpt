@@ -1,0 +1,996 @@
+Analysis & Synthesis report for Teste_projeto
+Sun Jun  2 00:04:56 2024
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Teste_projeto_final|Maquina_User:inst14|PS
+  9. State Machine - |Teste_projeto_final|Maq_estado:inst22|s_currentState
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: FreqDivider:inst27
+ 16. Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Mod1
+ 18. Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Div1
+ 19. Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Div0
+ 20. Parameter Settings for Inferred Entity Instance: bin2bcd:inst6|lpm_divide:Mod0
+ 21. Parameter Settings for Inferred Entity Instance: bin2bcd:inst6|lpm_divide:Mod1
+ 22. Parameter Settings for Inferred Entity Instance: bin2bcd:inst6|lpm_divide:Div1
+ 23. Parameter Settings for Inferred Entity Instance: bin2bcd:inst18|lpm_divide:Mod0
+ 24. Parameter Settings for Inferred Entity Instance: bin2bcd:inst18|lpm_divide:Mod1
+ 25. Parameter Settings for Inferred Entity Instance: bin2bcd:inst18|lpm_divide:Div1
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jun  2 00:04:56 2024          ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; Teste_projeto                                  ;
+; Top-level Entity Name              ; Teste_projeto_final                            ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 1,059                                          ;
+;     Total combinational functions  ; 1,056                                          ;
+;     Dedicated logic registers      ; 183                                            ;
+; Total registers                    ; 183                                            ;
+; Total pins                         ; 72                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                               ;
++------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                           ; Setting             ; Default Value      ;
++------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7       ;                    ;
+; Top-level entity name                                            ; Teste_projeto_final ; Teste_projeto      ;
+; Family name                                                      ; Cyclone IV E        ; Cyclone V          ;
+; Use smart compilation                                            ; Off                 ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                  ; On                 ;
+; Enable compact report table                                      ; Off                 ; Off                ;
+; Restructure Multiplexers                                         ; Auto                ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                 ; Off                ;
+; Preserve fewer node names                                        ; On                  ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable              ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto                ; Auto               ;
+; Safe State Machine                                               ; Off                 ; Off                ;
+; Extract Verilog State Machines                                   ; On                  ; On                 ;
+; Extract VHDL State Machines                                      ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                  ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                  ; On                 ;
+; Parallel Synthesis                                               ; On                  ; On                 ;
+; DSP Block Balancing                                              ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                               ; On                  ; On                 ;
+; Power-Up Don't Care                                              ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                 ; Off                ;
+; Remove Duplicate Registers                                       ; On                  ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                              ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                 ; Off                ;
+; Optimization Technique                                           ; Balanced            ; Balanced           ;
+; Carry Chain Length                                               ; 70                  ; 70                 ;
+; Auto Carry Chains                                                ; On                  ; On                 ;
+; Auto Open-Drain Pins                                             ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                 ; Off                ;
+; Auto ROM Replacement                                             ; On                  ; On                 ;
+; Auto RAM Replacement                                             ; On                  ; On                 ;
+; Auto DSP Block Replacement                                       ; On                  ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto                ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                  ; On                 ;
+; Strict RAM Replacement                                           ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                 ; Off                ;
+; Auto RAM Block Balancing                                         ; On                  ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                 ; Off                ;
+; Auto Resource Sharing                                            ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                          ; On                  ; On                 ;
+; Report Parameter Settings                                        ; On                  ; On                 ;
+; Report Source Assignments                                        ; On                  ; On                 ;
+; Report Connectivity Checks                                       ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                 ; Off                ;
+; Synchronization Register Chain Length                            ; 2                   ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                 ; 100                ;
+; Clock MUX Protection                                             ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                 ; Off                ;
+; Block Design Naming                                              ; Auto                ; Auto               ;
+; SDC constraint protection                                        ; Off                 ; Off                ;
+; Synthesis Effort                                                 ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                  ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                 ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                  ; On                 ;
++------------------------------------------------------------------+---------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
+; Program_Selector.vhd             ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector.vhd       ;         ;
+; Maquina_User.vhd                 ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maquina_User.vhd           ;         ;
+; User_Control.vhd                 ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/User_Control.vhd           ;         ;
+; Bin2BCD.vhd                      ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd                ;         ;
+; Bin7Seg.vhd                      ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin7Seg.vhd                ;         ;
+; Gerador_Pulsos.vhd               ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Gerador_Pulsos.vhd         ;         ;
+; Counter_Temperatura.vhd          ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Counter_Temperatura.vhd    ;         ;
+; Timer_Tempo.vhd                  ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Tempo.vhd            ;         ;
+; Timer_Pre.vhd                    ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Pre.vhd              ;         ;
+; Maq_estado.vhd                   ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd             ;         ;
+; Selecionarentradas7seg.vhd       ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Selecionarentradas7seg.vhd ;         ;
+; Teste_projeto_final.bdf          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Teste_projeto_final.bdf    ;         ;
+; FreqDivider.vhd                  ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/FreqDivider.vhd            ;         ;
+; DeBounce.vhd                     ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/DeBounce.vhd               ;         ;
+; Blinking.vhd                     ; yes             ; User VHDL File                     ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Blinking.vhd               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf                  ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                 ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc             ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                  ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/lpm_divide_q9m.tdf      ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/sign_div_unsign_fkh.tdf ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/alt_u_div_i4f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/lpm_divide_jhm.tdf      ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/sign_div_unsign_bkh.tdf ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/alt_u_div_a4f.tdf       ;         ;
+; db/lpm_divide_mhm.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/lpm_divide_mhm.tdf      ;         ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/sign_div_unsign_ekh.tdf ;         ;
+; db/alt_u_div_g4f.tdf             ; yes             ; Auto-Generated Megafunction        ; C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/alt_u_div_g4f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 1,059          ;
+;                                             ;                ;
+; Total combinational functions               ; 1056           ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 329            ;
+;     -- 3 input functions                    ; 268            ;
+;     -- <=2 input functions                  ; 459            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 729            ;
+;     -- arithmetic mode                      ; 327            ;
+;                                             ;                ;
+; Total registers                             ; 183            ;
+;     -- Dedicated logic registers            ; 183            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 72             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 152            ;
+; Total fan-out                               ; 3644           ;
+; Average fan-out                             ; 2.63           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name            ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; |Teste_projeto_final                      ; 1056 (1)            ; 183 (0)                   ; 0           ; 0            ; 0       ; 0         ; 72   ; 0            ; |Teste_projeto_final                                                                                                                ; Teste_projeto_final    ; work         ;
+;    |Bin7Seg:inst15|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Bin7Seg:inst15                                                                                                 ; Bin7Seg                ; work         ;
+;    |Bin7Seg:inst16|                       ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Bin7Seg:inst16                                                                                                 ; Bin7Seg                ; work         ;
+;    |Bin7Seg:inst17|                       ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Bin7Seg:inst17                                                                                                 ; Bin7Seg                ; work         ;
+;    |Bin7Seg:inst19|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Bin7Seg:inst19                                                                                                 ; Bin7Seg                ; work         ;
+;    |Bin7Seg:inst20|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Bin7Seg:inst20                                                                                                 ; Bin7Seg                ; work         ;
+;    |Bin7Seg:inst8|                        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Bin7Seg:inst8                                                                                                  ; Bin7Seg                ; work         ;
+;    |Bin7Seg:inst9|                        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Bin7Seg:inst9                                                                                                  ; Bin7Seg                ; work         ;
+;    |Blinking:inst23|                      ; 47 (47)             ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Blinking:inst23                                                                                                ; Blinking               ; work         ;
+;    |Counter_Temperatura:inst5|            ; 12 (12)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Counter_Temperatura:inst5                                                                                      ; Counter_Temperatura    ; work         ;
+;    |DeBounce:inst10|                      ; 50 (50)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|DeBounce:inst10                                                                                                ; DeBounce               ; work         ;
+;    |FreqDivider:inst27|                   ; 49 (49)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|FreqDivider:inst27                                                                                             ; FreqDivider            ; work         ;
+;    |Gerador_Pulsos:inst7|                 ; 53 (53)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Gerador_Pulsos:inst7                                                                                           ; Gerador_Pulsos         ; work         ;
+;    |Maq_estado:inst22|                    ; 65 (65)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Maq_estado:inst22                                                                                              ; Maq_estado             ; work         ;
+;    |Maquina_User:inst14|                  ; 4 (4)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Maquina_User:inst14                                                                                            ; Maquina_User           ; work         ;
+;    |Program_Selector:inst3|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Program_Selector:inst3                                                                                         ; Program_Selector       ; work         ;
+;    |Selecionarentradas7seg:inst12|        ; 23 (23)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Selecionarentradas7seg:inst12                                                                                  ; Selecionarentradas7seg ; work         ;
+;    |Timer_Pre:inst|                       ; 11 (11)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Timer_Pre:inst                                                                                                 ; Timer_Pre              ; work         ;
+;    |Timer_Tempo:inst4|                    ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|Timer_Tempo:inst4                                                                                              ; Timer_Tempo            ; work         ;
+;    |User_Control:inst11|                  ; 55 (55)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|User_Control:inst11                                                                                            ; User_Control           ; work         ;
+;    |bin2bcd:inst13|                       ; 219 (7)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13                                                                                                 ; bin2bcd                ; work         ;
+;       |lpm_divide:Div0|                   ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div0                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_mhm:auto_generated|  ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div0|lpm_divide_mhm:auto_generated                                                   ; lpm_divide_mhm         ; work         ;
+;             |sign_div_unsign_ekh:divider| ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div0|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh    ; work         ;
+;                |alt_u_div_g4f:divider|    ; 26 (26)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div0|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ; alt_u_div_g4f          ; work         ;
+;       |lpm_divide:Div1|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div1                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                   ; lpm_divide_jhm         ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh    ; work         ;
+;                |alt_u_div_a4f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f          ; work         ;
+;       |lpm_divide:Mod0|                   ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod0                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m         ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh    ; work         ;
+;                |alt_u_div_i4f:divider|    ; 47 (47)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f          ; work         ;
+;       |lpm_divide:Mod1|                   ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod1                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m         ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh    ; work         ;
+;                |alt_u_div_i4f:divider|    ; 79 (79)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst13|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f          ; work         ;
+;    |bin2bcd:inst18|                       ; 201 (15)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18                                                                                                 ; bin2bcd                ; work         ;
+;       |lpm_divide:Div1|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Div1                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                   ; lpm_divide_jhm         ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh    ; work         ;
+;                |alt_u_div_a4f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f          ; work         ;
+;       |lpm_divide:Mod0|                   ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod0                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m         ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh    ; work         ;
+;                |alt_u_div_i4f:divider|    ; 47 (47)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f          ; work         ;
+;       |lpm_divide:Mod1|                   ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod1                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m         ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh    ; work         ;
+;                |alt_u_div_i4f:divider|    ; 79 (79)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst18|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f          ; work         ;
+;    |bin2bcd:inst6|                        ; 201 (15)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6                                                                                                  ; bin2bcd                ; work         ;
+;       |lpm_divide:Div1|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Div1                                                                                  ; lpm_divide             ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                    ; lpm_divide_jhm         ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                        ; sign_div_unsign_bkh    ; work         ;
+;                |alt_u_div_a4f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider  ; alt_u_div_a4f          ; work         ;
+;       |lpm_divide:Mod0|                   ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod0                                                                                  ; lpm_divide             ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                    ; lpm_divide_q9m         ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 47 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                        ; sign_div_unsign_fkh    ; work         ;
+;                |alt_u_div_i4f:divider|    ; 47 (47)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider  ; alt_u_div_i4f          ; work         ;
+;       |lpm_divide:Mod1|                   ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod1                                                                                  ; lpm_divide             ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                    ; lpm_divide_q9m         ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 79 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                        ; sign_div_unsign_fkh    ; work         ;
+;                |alt_u_div_i4f:divider|    ; 79 (79)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Teste_projeto_final|bin2bcd:inst6|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider  ; alt_u_div_i4f          ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------+
+; State Machine - |Teste_projeto_final|Maquina_User:inst14|PS        ;
++----------------+---------+-----------+----------------+------------+
+; Name           ; PS.PREE ; PS.TEMPOO ; PS.TEMPERATURA ; PS.INICIAL ;
++----------------+---------+-----------+----------------+------------+
+; PS.INICIAL     ; 0       ; 0         ; 0              ; 0          ;
+; PS.TEMPERATURA ; 0       ; 0         ; 1              ; 1          ;
+; PS.TEMPOO      ; 0       ; 1         ; 0              ; 1          ;
+; PS.PREE        ; 1       ; 0         ; 0              ; 1          ;
++----------------+---------+-----------+----------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Teste_projeto_final|Maq_estado:inst22|s_currentState                                                                                                                                                                            ;
++------------------------------+------------------------------+----------------------------+---------------------------+-----------------------+---------------------------+--------------------------+----------------------+---------------------+
+; Name                         ; s_currentState.ARREFECIMENTO ; s_currentState.AIRFECHADA2 ; s_currentState.AIRABERTA2 ; s_currentState.COCCAO ; s_currentState.AIRFECHADA ; s_currentState.AIRABERTA ; s_currentState.PREAQ ; s_currentState.IDLE ;
++------------------------------+------------------------------+----------------------------+---------------------------+-----------------------+---------------------------+--------------------------+----------------------+---------------------+
+; s_currentState.IDLE          ; 0                            ; 0                          ; 0                         ; 0                     ; 0                         ; 0                        ; 0                    ; 0                   ;
+; s_currentState.PREAQ         ; 0                            ; 0                          ; 0                         ; 0                     ; 0                         ; 0                        ; 1                    ; 1                   ;
+; s_currentState.AIRABERTA     ; 0                            ; 0                          ; 0                         ; 0                     ; 0                         ; 1                        ; 0                    ; 1                   ;
+; s_currentState.AIRFECHADA    ; 0                            ; 0                          ; 0                         ; 0                     ; 1                         ; 0                        ; 0                    ; 1                   ;
+; s_currentState.COCCAO        ; 0                            ; 0                          ; 0                         ; 1                     ; 0                         ; 0                        ; 0                    ; 1                   ;
+; s_currentState.AIRABERTA2    ; 0                            ; 0                          ; 1                         ; 0                     ; 0                         ; 0                        ; 0                    ; 1                   ;
+; s_currentState.AIRFECHADA2   ; 0                            ; 1                          ; 0                         ; 0                     ; 0                         ; 0                        ; 0                    ; 1                   ;
+; s_currentState.ARREFECIMENTO ; 1                            ; 0                          ; 0                         ; 0                     ; 0                         ; 0                        ; 0                    ; 1                   ;
++------------------------------+------------------------------+----------------------------+---------------------------+-----------------------+---------------------------+--------------------------+----------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++-----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal       ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------+------------------------+
+; Maq_estado:inst22|s_temperatura_atual[1]            ; Maq_estado:inst22|WideOr3 ; yes                    ;
+; Maq_estado:inst22|s_temperatura_atual[2]            ; Maq_estado:inst22|WideOr3 ; yes                    ;
+; Maq_estado:inst22|s_temperatura_atual[3]            ; Maq_estado:inst22|WideOr3 ; yes                    ;
+; Maq_estado:inst22|s_coccao_atual[4]                 ; Maq_estado:inst22|WideOr1 ; yes                    ;
+; Maq_estado:inst22|s_coccao_atual[3]                 ; Maq_estado:inst22|WideOr1 ; yes                    ;
+; Maq_estado:inst22|s_coccao_atual[2]                 ; Maq_estado:inst22|WideOr1 ; yes                    ;
+; Maq_estado:inst22|s_coccao_atual[1]                 ; Maq_estado:inst22|WideOr1 ; yes                    ;
+; Maq_estado:inst22|s_coccao_atual[0]                 ; Maq_estado:inst22|WideOr1 ; yes                    ;
+; Maq_estado:inst22|s_pre_atual[3]                    ; Maq_estado:inst22|WideOr2 ; yes                    ;
+; Maq_estado:inst22|s_pre_atual[2]                    ; Maq_estado:inst22|WideOr2 ; yes                    ;
+; Maq_estado:inst22|s_pre_atual[1]                    ; Maq_estado:inst22|WideOr2 ; yes                    ;
+; Maq_estado:inst22|s_pre_atual[0]                    ; Maq_estado:inst22|WideOr2 ; yes                    ;
+; Maq_estado:inst22|s_temperatura_atual[7]            ; Maq_estado:inst22|WideOr3 ; yes                    ;
+; Maq_estado:inst22|s_temperatura_atual[4]            ; Maq_estado:inst22|WideOr3 ; yes                    ;
+; Maq_estado:inst22|s_temperatura_atual[5]            ; Maq_estado:inst22|WideOr3 ; yes                    ;
+; Maq_estado:inst22|s_temperatura_atual[6]            ; Maq_estado:inst22|WideOr3 ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                           ;                        ;
++-----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++--------------------------------------------+----------------------------------------+
+; Register name                              ; Reason for Removal                     ;
++--------------------------------------------+----------------------------------------+
+; Counter_Temperatura:inst5|s_temperatura[0] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1      ;                                        ;
++--------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 183   ;
+; Number of registers using Synchronous Clear  ; 101   ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; User_Control:inst11|temp[4]            ; 4       ;
+; User_Control:inst11|temp[2]            ; 3       ;
+; User_Control:inst11|tempo_interno[0]   ; 9       ;
+; User_Control:inst11|pre_interno[0]     ; 4       ;
+; Maquina_User:inst14|key_prev           ; 1       ;
+; User_Control:inst11|key_dec_prev       ; 8       ;
+; User_Control:inst11|key_inc_prev       ; 5       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Teste_projeto_final|Blinking:inst23|led1_state                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Teste_projeto_final|Blinking:inst23|counter[7]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Teste_projeto_final|DeBounce:inst10|stable_counter[23]                           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Teste_projeto_final|User_Control:inst11|tempo_interno[1]                         ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |Teste_projeto_final|User_Control:inst11|temp[1]                                  ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |Teste_projeto_final|User_Control:inst11|pre_interno[1]                           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Teste_projeto_final|User_Control:inst11|temp[2]                                  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Teste_projeto_final|Selecionarentradas7seg:inst12|saida_temperatura[1]           ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Teste_projeto_final|Selecionarentradas7seg:inst12|saida_tempo_pre_aquecimento[6] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Teste_projeto_final|Selecionarentradas7seg:inst12|saida_tempo_pre_aquecimento[2] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Teste_projeto_final|Selecionarentradas7seg:inst12|saida_tempo_coccao[5]          ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |Teste_projeto_final|Selecionarentradas7seg:inst12|saida_tempo_coccao[2]          ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |Teste_projeto_final|Maq_estado:inst22|Selector0                                  ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |Teste_projeto_final|Maq_estado:inst22|Selector25                                 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |Teste_projeto_final|Maq_estado:inst22|Selector17                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FreqDivider:inst27 ;
++----------------+----------+-------------------------------------+
+; Parameter Name ; Value    ; Type                                ;
++----------------+----------+-------------------------------------+
+; k              ; 50000000 ; Signed Integer                      ;
++----------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 8              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Mod1 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 8              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Div1 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst13|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 7              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_mhm ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst6|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                              ;
+; LPM_WIDTHD             ; 8              ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst6|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                              ;
+; LPM_WIDTHD             ; 8              ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst6|lpm_divide:Div1 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst18|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 8              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst18|lpm_divide:Mod1 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 8              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bin2bcd:inst18|lpm_divide:Div1 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 72                          ;
+; cycloneiii_ff         ; 183                         ;
+;     ENA               ; 16                          ;
+;     ENA SCLR          ; 32                          ;
+;     SCLR              ; 69                          ;
+;     SLD               ; 27                          ;
+;     plain             ; 39                          ;
+; cycloneiii_lcell_comb ; 1066                        ;
+;     arith             ; 327                         ;
+;         2 data inputs ; 151                         ;
+;         3 data inputs ; 176                         ;
+;     normal            ; 739                         ;
+;         0 data inputs ; 40                          ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 253                         ;
+;         3 data inputs ; 92                          ;
+;         4 data inputs ; 329                         ;
+;                       ;                             ;
+; Max LUT depth         ; 23.60                       ;
+; Average LUT depth     ; 13.71                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Sun Jun  2 00:04:43 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Teste_projeto -c Teste_projeto
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file program_selector.vhd
+    Info (12022): Found design unit 1: Program_Selector-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector.vhd Line: 20
+    Info (12023): Found entity 1: Program_Selector File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file maquina_user.vhd
+    Info (12022): Found design unit 1: Maquina_User-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maquina_User.vhd Line: 14
+    Info (12023): Found entity 1: Maquina_User File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maquina_User.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file temperatura_user.vhd
+    Info (12022): Found design unit 1: Temperatura_User-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Temperatura_User.vhd Line: 15
+    Info (12023): Found entity 1: Temperatura_User File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Temperatura_User.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file tempo_user.vhd
+    Info (12022): Found design unit 1: Tempo_User-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Tempo_User.vhd Line: 15
+    Info (12023): Found entity 1: Tempo_User File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Tempo_User.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pre_user.vhd
+    Info (12022): Found design unit 1: Pre_User-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Pre_User.vhd Line: 15
+    Info (12023): Found entity 1: Pre_User File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Pre_User.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file user_control.vhd
+    Info (12022): Found design unit 1: User_Control-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/User_Control.vhd Line: 19
+    Info (12023): Found entity 1: User_Control File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/User_Control.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bin2bcd.vhd
+    Info (12022): Found design unit 1: bin2bcd-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 14
+    Info (12023): Found entity 1: bin2bcd File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bin7seg.vhd
+    Info (12022): Found design unit 1: Bin7Seg-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin7Seg.vhd Line: 9
+    Info (12023): Found entity 1: Bin7Seg File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin7Seg.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file tentativa1.bdf
+    Info (12023): Found entity 1: tentativa1
+Info (12021): Found 2 design units, including 1 entities, in source file gerador_pulsos.vhd
+    Info (12022): Found design unit 1: Gerador_Pulsos-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Gerador_Pulsos.vhd Line: 13
+    Info (12023): Found entity 1: Gerador_Pulsos File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Gerador_Pulsos.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file counter_temperatura.vhd
+    Info (12022): Found design unit 1: Counter_Temperatura-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Counter_Temperatura.vhd Line: 15
+    Info (12023): Found entity 1: Counter_Temperatura File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Counter_Temperatura.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file timer_tempo.vhd
+    Info (12022): Found design unit 1: Timer_Tempo-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Tempo.vhd Line: 15
+    Info (12023): Found entity 1: Timer_Tempo File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Tempo.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file timer_pre.vhd
+    Info (12022): Found design unit 1: Timer_Pre-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Pre.vhd Line: 15
+    Info (12023): Found entity 1: Timer_Pre File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Pre.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file const200.vhd
+    Info (12022): Found design unit 1: Const200-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Const200.vhd Line: 10
+    Info (12023): Found entity 1: Const200 File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Const200.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file tentativa2.bdf
+    Info (12023): Found entity 1: tentativa2
+Info (12021): Found 2 design units, including 1 entities, in source file maq_estado.vhd
+    Info (12022): Found design unit 1: Maq_estado-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 31
+    Info (12023): Found entity 1: Maq_estado File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file selecionarentradas7seg.vhd
+    Info (12022): Found design unit 1: Selecionarentradas7seg-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Selecionarentradas7seg.vhd Line: 25
+    Info (12023): Found entity 1: Selecionarentradas7seg File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Selecionarentradas7seg.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file teste_projeto_final.bdf
+    Info (12023): Found entity 1: Teste_projeto_final
+Info (12021): Found 2 design units, including 1 entities, in source file const20.vhd
+    Info (12022): Found design unit 1: Const20-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Const20.vhd Line: 10
+    Info (12023): Found entity 1: Const20 File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Const20.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file tentativa3.bdf
+    Info (12023): Found entity 1: tentativa3
+Info (12021): Found 2 design units, including 1 entities, in source file const5.vhd
+    Info (12022): Found design unit 1: Const5-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Const5.vhd Line: 10
+    Info (12023): Found entity 1: Const5 File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Const5.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file freqdivider.vhd
+    Info (12022): Found design unit 1: FreqDivider-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/FreqDivider.vhd Line: 13
+    Info (12023): Found entity 1: FreqDivider File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/FreqDivider.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer_key.vhd
+    Info (12022): Found design unit 1: Debouncer_key-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Debouncer_key.vhd Line: 15
+    Info (12023): Found entity 1: Debouncer_key File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Debouncer_key.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
+    Info (12022): Found design unit 1: DeBounce-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/DeBounce.vhd Line: 11
+    Info (12023): Found entity 1: DeBounce File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/DeBounce.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file teste_projeto_top_level.vhd
+    Info (12022): Found design unit 1: Teste_projeto_top_level-bdf_type File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Teste_projeto_top_level.vhd Line: 23
+    Info (12023): Found entity 1: Teste_projeto_top_level File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Teste_projeto_top_level.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file blinking.vhd
+    Info (12022): Found design unit 1: Blinking-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Blinking.vhd Line: 13
+    Info (12023): Found entity 1: Blinking File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Blinking.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file teste_blinking.bdf
+    Info (12023): Found entity 1: teste_blinking
+Info (12021): Found 2 design units, including 1 entities, in source file maq_estado_tb.vhd
+    Info (12022): Found design unit 1: Maq_estado_TB-Stimulus File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado_TB.vhd Line: 8
+    Info (12023): Found entity 1: Maq_estado_TB File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado_TB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file program_selector_tb.vhd
+    Info (12022): Found design unit 1: Program_Selector_TB-behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector_TB.vhd Line: 9
+    Info (12023): Found entity 1: Program_Selector_TB File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector_TB.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file maquina_user_tb.vhd
+    Info (12022): Found design unit 1: Maquina_User_TB-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maquina_User_TB.vhd Line: 7
+    Info (12023): Found entity 1: Maquina_User_TB File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maquina_User_TB.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file counter_temperatura_tb.vhd
+    Info (12022): Found design unit 1: Counter_Temperatura_TB-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Counter_Temperatura_TB.vhd Line: 7
+    Info (12023): Found entity 1: Counter_Temperatura_TB File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Counter_Temperatura_TB.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file user_control_tb.vhd
+    Info (12022): Found design unit 1: User_Control_TB-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/User_Control_TB.vhd Line: 7
+    Info (12023): Found entity 1: User_Control_TB File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/User_Control_TB.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file timer_tempo_tb.vhd
+    Info (12022): Found design unit 1: Timer_Tempo_TB-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Tempo_TB.vhd Line: 7
+    Info (12023): Found entity 1: Timer_Tempo_TB File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Tempo_TB.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file timer_pre_tb.vhd
+    Info (12022): Found design unit 1: Timer_Pre_TB-Behavioral File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Pre_TB.vhd Line: 7
+    Info (12023): Found entity 1: Timer_Pre_TB File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Pre_TB.vhd Line: 4
+Info (12127): Elaborating entity "Teste_projeto_final" for the top level hierarchy
+Info (12128): Elaborating entity "Bin7Seg" for hierarchy "Bin7Seg:inst15"
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:inst13"
+Info (12128): Elaborating entity "Selecionarentradas7seg" for hierarchy "Selecionarentradas7seg:inst12"
+Info (12128): Elaborating entity "Maq_estado" for hierarchy "Maq_estado:inst22"
+Warning (10036): Verilog HDL or VHDL warning at Maq_estado.vhd(34): object "s_terminou" assigned a value but never read File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at Maq_estado.vhd(74): signal "enableON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at Maq_estado.vhd(172): signal "s_estadoatual" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at Maq_estado.vhd(173): signal "s_temperatura_atual" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at Maq_estado.vhd(174): signal "s_coccao_atual" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at Maq_estado.vhd(175): signal "s_pre_atual" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 175
+Warning (10631): VHDL Process Statement warning at Maq_estado.vhd(53): inferring latch(es) for signal or variable "s_coccao_atual", which holds its previous value in one or more paths through the process File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at Maq_estado.vhd(53): inferring latch(es) for signal or variable "s_pre_atual", which holds its previous value in one or more paths through the process File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at Maq_estado.vhd(53): inferring latch(es) for signal or variable "s_temperatura_atual", which holds its previous value in one or more paths through the process File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[0]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[1]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[2]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[3]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[4]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[5]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[6]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_temperatura_atual[7]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[0]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[1]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[2]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[3]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[4]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[5]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[6]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_pre_atual[7]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[0]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[1]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[2]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[3]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[4]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[5]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[6]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (10041): Inferred latch for "s_coccao_atual[7]" at Maq_estado.vhd(53) File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+Info (12128): Elaborating entity "FreqDivider" for hierarchy "FreqDivider:inst27"
+Warning (10540): VHDL Signal Declaration warning at FreqDivider.vhd(16): used explicit default value for signal "k_unsigned" because signal was never assigned a value File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/FreqDivider.vhd Line: 16
+Info (12128): Elaborating entity "Timer_Pre" for hierarchy "Timer_Pre:inst"
+Warning (10492): VHDL Process Statement warning at Timer_Pre.vhd(31): signal "s_pre" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Pre.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at Timer_Pre.vhd(35): signal "s_pre" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Pre.vhd Line: 35
+Info (12128): Elaborating entity "Gerador_Pulsos" for hierarchy "Gerador_Pulsos:inst7"
+Info (12128): Elaborating entity "Timer_Tempo" for hierarchy "Timer_Tempo:inst4"
+Warning (10492): VHDL Process Statement warning at Timer_Tempo.vhd(31): signal "s_tempo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Tempo.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at Timer_Tempo.vhd(35): signal "s_tempo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Timer_Tempo.vhd Line: 35
+Info (12128): Elaborating entity "Counter_Temperatura" for hierarchy "Counter_Temperatura:inst5"
+Warning (10492): VHDL Process Statement warning at Counter_Temperatura.vhd(31): signal "s_temperatura" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Counter_Temperatura.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at Counter_Temperatura.vhd(35): signal "s_temperatura" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Counter_Temperatura.vhd Line: 35
+Info (12128): Elaborating entity "DeBounce" for hierarchy "DeBounce:inst10"
+Info (12128): Elaborating entity "Program_Selector" for hierarchy "Program_Selector:inst3"
+Warning (10492): VHDL Process Statement warning at Program_Selector.vhd(31): signal "temperatura_user" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at Program_Selector.vhd(32): signal "tempo_user" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at Program_Selector.vhd(33): signal "pre_aquecimento_user" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Program_Selector.vhd Line: 33
+Info (12128): Elaborating entity "User_Control" for hierarchy "User_Control:inst11"
+Info (12128): Elaborating entity "Maquina_User" for hierarchy "Maquina_User:inst14"
+Info (12128): Elaborating entity "Blinking" for hierarchy "Blinking:inst23"
+Info (278001): Inferred 10 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst13|Mod0" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst13|Mod1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst13|Div1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 27
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst13|Div0" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst6|Mod0" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst6|Mod1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst6|Div1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 27
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst18|Mod0" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst18|Mod1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bin2bcd:inst18|Div1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 27
+Info (12130): Elaborated megafunction instantiation "bin2bcd:inst13|lpm_divide:Mod0" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+Info (12133): Instantiated megafunction "bin2bcd:inst13|lpm_divide:Mod0" with the following parameter: File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/lpm_divide_q9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/sign_div_unsign_fkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/alt_u_div_i4f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "bin2bcd:inst13|lpm_divide:Mod1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+Info (12133): Instantiated megafunction "bin2bcd:inst13|lpm_divide:Mod1" with the following parameter: File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 28
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "bin2bcd:inst13|lpm_divide:Div1" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 27
+Info (12133): Instantiated megafunction "bin2bcd:inst13|lpm_divide:Div1" with the following parameter: File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 27
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/lpm_divide_jhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/sign_div_unsign_bkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/alt_u_div_a4f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "bin2bcd:inst13|lpm_divide:Div0" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 26
+Info (12133): Instantiated megafunction "bin2bcd:inst13|lpm_divide:Div0" with the following parameter: File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Bin2BCD.vhd Line: 26
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mhm.tdf
+    Info (12023): Found entity 1: lpm_divide_mhm File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/lpm_divide_mhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ekh File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/sign_div_unsign_ekh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
+    Info (12023): Found entity 1: alt_u_div_g4f File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/alt_u_div_g4f.tdf Line: 27
+Warning (13012): Latch Maq_estado:inst22|s_temperatura_atual[1] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.ARREFECIMENTO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_temperatura_atual[2] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.ARREFECIMENTO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_temperatura_atual[3] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.ARREFECIMENTO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_coccao_atual[4] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.COCCAO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_coccao_atual[3] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.COCCAO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_coccao_atual[2] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.COCCAO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_coccao_atual[1] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.COCCAO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_coccao_atual[0] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.COCCAO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_pre_atual[3] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.PREAQ File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_pre_atual[2] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.AIRABERTA File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_pre_atual[1] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.AIRABERTA File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_pre_atual[0] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.AIRABERTA File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_temperatura_atual[7] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.ARREFECIMENTO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_temperatura_atual[4] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.ARREFECIMENTO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_temperatura_atual[5] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.ARREFECIMENTO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13012): Latch Maq_estado:inst22|s_temperatura_atual[6] has unsafe behavior File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Maq_estado:inst22|s_currentState.ARREFECIMENTO File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/Maq_estado.vhd Line: 33
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[17]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "bin2bcd:inst13|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: C:/Users/irisb/OneDrive/Ambiente de Trabalho/ua/lsd/Testes_LSD/db/alt_u_div_i4f.tdf Line: 62
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1131 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 62 output pins
+    Info (21061): Implemented 1059 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Sun Jun  2 00:04:56 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:17
+
+

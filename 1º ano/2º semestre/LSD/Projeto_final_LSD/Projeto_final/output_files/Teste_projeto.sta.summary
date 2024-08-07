@@ -1,0 +1,221 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : -5.042
+TNS   : -33.697
+
+Type  : Slow 1200mV 85C Model Setup 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : -4.879
+TNS   : -24.017
+
+Type  : Slow 1200mV 85C Model Setup 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : -4.701
+TNS   : -18.114
+
+Type  : Slow 1200mV 85C Model Setup 'FreqDivider:inst27|clkOut'
+Slack : -4.555
+TNS   : -26.491
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.545
+TNS   : -462.011
+
+Type  : Slow 1200mV 85C Model Setup 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : -3.429
+TNS   : -71.291
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.023
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'FreqDivider:inst27|clkOut'
+Slack : 0.406
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : 0.748
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : 0.790
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : 0.810
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -198.320
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : -1.285
+TNS   : -29.555
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FreqDivider:inst27|clkOut'
+Slack : -1.285
+TNS   : -10.280
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : 0.394
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : -4.703
+TNS   : -31.380
+
+Type  : Slow 1200mV 0C Model Setup 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : -4.473
+TNS   : -22.019
+
+Type  : Slow 1200mV 0C Model Setup 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : -4.325
+TNS   : -16.608
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.102
+TNS   : -409.408
+
+Type  : Slow 1200mV 0C Model Setup 'FreqDivider:inst27|clkOut'
+Slack : -4.094
+TNS   : -23.581
+
+Type  : Slow 1200mV 0C Model Setup 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : -3.036
+TNS   : -63.308
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.102
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'FreqDivider:inst27|clkOut'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : 0.718
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : 0.788
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : 0.855
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -198.320
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : -1.285
+TNS   : -29.555
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FreqDivider:inst27|clkOut'
+Slack : -1.285
+TNS   : -10.280
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : -2.126
+TNS   : -13.854
+
+Type  : Fast 1200mV 0C Model Setup 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : -2.044
+TNS   : -7.855
+
+Type  : Fast 1200mV 0C Model Setup 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : -2.016
+TNS   : -9.868
+
+Type  : Fast 1200mV 0C Model Setup 'FreqDivider:inst27|clkOut'
+Slack : -1.893
+TNS   : -10.074
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.727
+TNS   : -147.183
+
+Type  : Fast 1200mV 0C Model Setup 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : -1.119
+TNS   : -22.177
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.151
+TNS   : -0.151
+
+Type  : Fast 1200mV 0C Model Hold 'FreqDivider:inst27|clkOut'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : 0.422
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : 0.552
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -164.411
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Gerador_Pulsos:inst7|pulse_reg'
+Slack : -1.000
+TNS   : -23.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FreqDivider:inst27|clkOut'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.COCCAO'
+Slack : 0.332
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.ARREFECIMENTO'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Maq_estado:inst22|s_currentState.AIRABERTA'
+Slack : 0.356
+TNS   : 0.000
+
+------------------------------------------------------------

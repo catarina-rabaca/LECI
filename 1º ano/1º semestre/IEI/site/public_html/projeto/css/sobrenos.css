@@ -1,0 +1,263 @@
+* {
+   margin: 0;
+   padding: 0;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+   background-color: #564e47; 
+   margin: 0;
+   padding: 0;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar {
+   width: 85%;
+   margin: auto;
+   padding: 30px 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.logo {
+   width: 100px;
+   cursor: pointer;
+}
+
+.navbar ul li {
+   list-style: none;
+   display: inline-block;
+   margin: 0 20px;
+   position: relative;
+}
+
+.navbar ul li a {
+   text-decoration: none;
+   color: #ffffe6;
+   text-transform: uppercase;
+}
+
+.navbar ul li::after {
+   content: '';
+   height: 3px;
+   width: 0;
+   background: #a9cf99;
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   transition: width 1s;
+}
+
+.navbar ul li:hover::after {
+   width: 100%;
+}
+
+.contentor {
+   text-align: center;
+   background: #ffffe6;
+   width: 75%;
+   margin: auto; 
+   padding: 10px; 
+   border-radius: 50px; 
+   margin-top: 10px; 
+   border: 7px solid #759666; 
+   box-shadow: 0 0 30px #759666;
+   padding-bottom: 20px;
+   padding-top: -25px;
+}
+
+.header {
+   padding: 60px 0;
+   color: #564e47;
+   font-size: 20px;
+   margin: auto;
+   line-height: 50px;
+}
+
+.subcontentor {
+   max-width:  1200px;
+   margin: auto;
+   padding: 48px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.equipa {
+   margin: 40px;
+   margin-bottom: -5px;
+   padding: 20px;
+   max-width: 30%;
+   cursor: pointer;
+   transition: 0.5s;
+   box-sizing: border-box;
+   border-radius: 50px;
+}
+
+.equipa:hover {
+   transform: scale(1.2);
+   background: #a9cf99;
+}
+
+.equipa img {
+   border: 7px solid #637a5b;
+   border-radius: 90px;
+   width: 150px;
+   height: 150px;
+   opacity: 0.8;
+   transition: opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out, border 0.5s ease-in-out; 
+}
+
+.equipa:hover img {
+   box-shadow: 0 0 50px #1cdf06;
+   border: 7px solid #28c309;
+   transition-duration: 0.5s;
+   opacity: 1;
+}
+
+.nome {
+   margin-top: 20px;
+   font-size: 20px;
+   color: #564e47;
+   font-family:monospace;
+}
+
+.numero_mecanografico {
+   margin-top: 2px;
+   font-size: 15px;
+   color: #4f634f;
+   font-family:monospace;
+}
+
+.titulo h1 {
+   color: #314134;
+   font-size: 36px; 
+   font-weight: 700;
+   text-transform:capitalize;
+   margin-bottom: 20px;
+   margin-top: 30px;
+}
+
+.funcao {
+   color: #314134;
+   font-size: 20px;
+   font-weight: 700;
+   text-transform:capitalize;
+   margin-bottom: 20px;
+   font-style: italic;
+}
+
+.sobre {
+   color: #314134;
+   font-size: 14px;
+   font-weight: 500;
+   margin-bottom: 20px;
+}
+
+.contactar {
+   margin: 14px;
+}
+
+.contactar a {
+   color: #564e47;
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 20px;
+   display: inline-block;
+   height: 40px;
+   width: 30px;
+   transition: 0.3s;
+}
+
+.contactar a:hover {
+   color: #04a00c;
+   transition: 0.3s;
+   scale: 1.6;
+}
+
+.resumo {
+   width: 100%; 
+   margin-top: 20px;
+   margin-bottom: 10px;
+   padding: 90px;
+   border-radius: 50px;
+}
+
+.titulo_resumo h2 {
+   color: #314134;
+   font-size: 36px; 
+   font-weight: 700;
+   text-transform:capitalize;
+   margin-bottom: 20px;
+   margin-top: -40px;
+   margin-left: 20px;
+   transition: scale 0.3s ease-in-out;
+}
+
+.titulo_resumo h2:hover {
+   scale: 1.2;
+   transition: 0.5s;
+}
+
+.texto_resumo {
+   color: #595959;
+   font-size: 15px;
+   margin-left: 80px;
+   margin-right: 80px;
+   font-weight: 500;
+   text-align: justify;
+   margin-bottom: 20px;
+}
+
+.links {
+   width: 100%;
+   margin-top: 20px;
+   padding: 20px;
+   border-radius: 50px;
+}
+
+.titulo_links h2 {
+   color: #314134;
+   font-size: 36px; 
+   font-weight: 700;
+   text-transform:capitalize;
+   margin-bottom: 20px;
+   transition: scale 0.3s ease-in-out;
+}
+
+.titulo_links h2:hover {
+   scale: 1.2;
+   transition: 0.5s;
+}
+
+.texto_links {
+   color: #595959;
+   font-size: 15px;
+   font-weight: 500;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.repositorio-btn {
+   padding: 15px;
+   border-radius: 50px;
+   background: #658261;
+   color: #feffdf;
+   font-size: 20px;
+   font-weight: 600;
+   text-align: center;
+   transition: 0.3s;
+   text-decoration: none;
+   border: 5px solid #314134;
+   font-family: monospace;
+   transition: 0.2s ease-in-out;
+   margin-bottom: 20px;
+   margin-left: 25px;
+}
+
+.repositorio-btn:hover {
+   background: #a9cf99;
+   transition: 0.3s;
+   color: #314134;
+}

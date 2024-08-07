@@ -1,0 +1,46 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+entity Timer_Pre is
+    port(
+        ativo        : in std_logic;
+        enable       : in std_logic;
+        pre          : in std_logic_vector(7 downto 0);
+        timer_out  : out std_logic_vector(7 downto 0);
+        next_state   : out std_logic
+    );
+end Timer_Pre;
+
+architecture behavioral of Timer_Pre is
+    signal s_pre : std_logic_vector(7 downto 0);
+begin
+    process(ativo, enable, pre)
+    begin
+        if enable = '1' then
+            if ativo = '1' then
+                if pre > "00000000" then
+                    s_pre <= pre - "00000001";
+                else
+                    s_pre <= "00000000"; -- Para evitar valores negativos
+                end if;
+            else
+                s_pre <= s_pre;
+            end if;
+        else
+            s_pre <= s_pre; -- Mantém o valor anterior se o enable for '0'
+        end if;
+    end process;
+
+    timer_out <= s_pre;
+
+    process(s_pre)
+    begin
+        if s_pre = "00000000" then
+            next_state <= '1';
+        else
+            next_state <= '0';
+        end if;
+    end process;
+
+end behavioral;

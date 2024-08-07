@@ -1,0 +1,46 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+entity Counter_Temperatura is
+    port(
+        ativo        : in std_logic;
+        enable       : in std_logic;
+        temperatura  : in std_logic_vector(7 downto 0);
+        counter_out  : out std_logic_vector(7 downto 0);
+        next_state   : out std_logic
+    );
+end Counter_Temperatura;
+
+architecture behavioral of Counter_Temperatura is
+    signal s_temperatura : std_logic_vector(7 downto 0);
+begin
+    process(ativo, enable, temperatura)
+    begin
+        if enable = '1' then
+            if ativo = '1' then
+                if temperatura > "00010100" then
+                    s_temperatura <= temperatura - "00001010";
+                else
+                    s_temperatura <= "00000000"; -- Para evitar valores negativos
+                end if;
+            else
+                s_temperatura <= s_temperatura;
+            end if;
+        else
+            s_temperatura <= s_temperatura; -- Mantém o valor anterior se o enable for '0'
+        end if;
+    end process;
+
+    counter_out <= s_temperatura;
+
+    process(s_temperatura)
+    begin
+        if s_temperatura = "00000000" then
+            next_state <= '1';
+        else
+            next_state <= '0';
+        end if;
+    end process;
+
+end behavioral;

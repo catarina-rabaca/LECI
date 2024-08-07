@@ -1,0 +1,18 @@
+
+State Machine - |Teste_projeto_final|Maquina_User:inst14|PS
+Name PS.PREE PS.TEMPOO PS.TEMPERATURA PS.INICIAL 
+PS.INICIAL 0 0 0 0 
+PS.TEMPERATURA 0 0 1 1 
+PS.TEMPOO 0 1 0 1 
+PS.PREE 1 0 0 1 
+
+State Machine - |Teste_projeto_final|Maq_estado:inst22|s_currentState
+Name s_currentState.ARREFECIMENTO s_currentState.AIRFECHADA2 s_currentState.AIRABERTA2 s_currentState.COCCAO s_currentState.AIRFECHADA s_currentState.AIRABERTA s_currentState.PREAQ s_currentState.IDLE 
+s_currentState.IDLE 0 0 0 0 0 0 0 0 
+s_currentState.PREAQ 0 0 0 0 0 0 1 1 
+s_currentState.AIRABERTA 0 0 0 0 0 1 0 1 
+s_currentState.AIRFECHADA 0 0 0 0 1 0 0 1 
+s_currentState.COCCAO 0 0 0 1 0 0 0 1 
+s_currentState.AIRABERTA2 0 0 1 0 0 0 0 1 
+s_currentState.AIRFECHADA2 0 1 0 0 0 0 0 1 
+s_currentState.ARREFECIMENTO 1 0 0 0 0 0 0 1 

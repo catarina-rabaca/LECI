@@ -1,0 +1,100 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Maquina_User is
+    Port (
+        clk   : in  STD_LOGIC;
+        key   : in  STD_LOGIC;
+        temp  : out STD_LOGIC;
+        tempo : out STD_LOGIC;
+        pre   : out STD_LOGIC
+    );
+end Maquina_User;
+
+architecture Behavioral of Maquina_User is
+    type state_type is (INICIAL, TEMPERATURA, TEMPOO, PREE);
+    signal PS, NS : state_type;
+begin
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            PS <= NS;
+        end if;
+    end process;
+
+	 --Com a key vamos escolher o parametro que queremos alterar (Temperatura/Tempo/Pre-aquecimento))
+	 
+    process(PS, key)
+    begin
+        case PS is
+            when INICIAL =>
+                if key = '0' then
+                    NS <= TEMPERATURA;
+                else
+                    NS <= INICIAL;
+                end if;
+
+            when TEMPERATURA =>
+                if key = '0' then
+                    NS <= TEMPOO;
+                else
+                    NS <= TEMPERATURA;
+                end if;
+
+            when TEMPOO =>
+                if key = '0' then
+                    NS <= PREE;
+                else
+                    NS <= TEMPOO;
+                end if;
+
+            when PREE =>
+                if key = '0' then
+                    NS <= INICIAL;
+                else
+                    NS <= PREE;
+                end if;
+
+            when others =>
+                NS <= INICIAL;
+        end case;
+    end process;
+
+	 --Vamos dar outputs de enables que vao entrar no bloco do parametro que escolhemos com a key para ajustar:
+	 
+    process(PS)
+    begin
+        temp <= '0';
+        tempo <= '0';
+        pre <= '0';
+
+        case PS is
+            when INICIAL =>
+                temp <= '0';
+                tempo <= '0';
+                pre <= '0';
+
+            when TEMPERATURA =>
+                temp <= '1';					--enable do bloco de ajuste da temperatura
+                tempo <= '0';
+                pre <= '0';
+
+            when TEMPOO =>
+                temp <= '0';
+                tempo <= '1';					--enable do bloco de ajuste do tempo
+                pre <= '0';
+
+            when PREE =>
+                temp <= '0';
+                tempo <= '0';
+                pre <= '1';					--enable do bloco de ajuste do pre
+
+            when others =>	
+                temp <= '0';
+                tempo <= '0';
+                pre <= '0';
+        end case;
+    end process;
+
+end Behavioral;

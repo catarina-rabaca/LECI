@@ -1,0 +1,35 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity Pre_User is
+    port (
+        enable: in  std_logic;
+        clk:    in  std_logic;
+        up:     in  std_logic;
+        down:   in  std_logic;
+        pre:    out std_logic_vector(7 downto 0)
+    );
+end Pre_User;
+
+architecture behavioral of Pre_User is
+    signal pr: integer range 1 to 10 := 1; 						-- A pré-temperatura começa em 0 
+
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if enable = '1' then
+                
+					 if up = '1' and pr < 10 then						--Incrementa 1 unidade se for menor que 10
+                    pr <= pr + 1;
+                
+					 elsif down = '1' and pr > 1 then				--Decremente 1 unidade se for maior que 0
+                    pr <= pr - 1;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    pre <= std_logic_vector(to_unsigned(pr, 8));				--Converte para binario no final
+end behavioral;

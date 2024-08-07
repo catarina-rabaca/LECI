@@ -1,0 +1,213 @@
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL; 
+
+entity Bin7Seg is
+    Port (
+        preaq           : in  STD_LOGIC_VECTOR (7 downto 0);
+        tempo           : in  STD_LOGIC_VECTOR (7 downto 0);
+        temperatura     : in  STD_LOGIC_VECTOR (11 downto 0);
+
+        segOut1         : out STD_LOGIC_VECTOR (6 downto 0); --Dezenas tempo
+        segOut2         : out STD_LOGIC_VECTOR (6 downto 0);
+        segOut3         : out STD_LOGIC_VECTOR (6 downto 0);
+        segOut4         : out STD_LOGIC_VECTOR (6 downto 0);
+        segOut5         : out STD_LOGIC_VECTOR (6 downto 0);
+        segOut6         : out STD_LOGIC_VECTOR (6 downto 0);
+        segOut7         : out STD_LOGIC_VECTOR (6 downto 0)
+    );
+end Bin7Seg;
+
+architecture Behavioral of Bin7Seg is
+begin
+
+    --Tempo
+    process(tempo)
+    begin
+
+			if tempo(7 downto 4) = "0001" then	--1					--Dezenas:
+						segOut1 <= "1111001";
+				elsif
+				tempo(7 downto 4) = "0010" then --2
+						segOut1 <= "0010100";
+				elsif
+				tempo(7 downto 4) = "0011" then --3
+						segOut1 <= "0110000";
+				else
+						segOut1 <= "1111111"; --0
+            end if;
+ 
+			if tempo(3 downto 0) = "0000" then --0					--Unidades:
+						segOut2 <= "0001000";
+				elsif
+				tempo(3 downto 0) = "0001" then --1
+						segOut2 <= "1111001";
+				elsif
+				tempo(3 downto 0) = "0010" then --2
+						segOut2 <= "1111001";
+				elsif
+				tempo(3 downto 0) = "0011" then --3
+						segOut2 <= "0110000";
+				elsif
+				tempo(3 downto 0) = "0100" then --4
+						segOut2 <= "0011001";
+				elsif
+				tempo(3 downto 0) = "0101" then --5
+						segOut2 <= "0010010";
+				elsif
+				tempo(3 downto 0) = "0110" then --6
+						segOut2 <= "0000010";
+				elsif
+				tempo(3 downto 0) = "0111" then --7
+						segOut2 <= "1111000";
+				elsif
+				tempo(3 downto 0) = "1000" then --8
+						segOut2 <= "0000000";
+				elsif
+				tempo(3 downto 0) = "1001" then --9
+						segOut2 <= "0010000";
+				else
+						segOut2 <= "1111111"; 
+        end if;
+    end process;
+	 
+	 
+	 
+	 
+	 process (preaq)
+	 begin
+	 
+	 			if preaq(3 downto 0) = "0000" then --0					--Unidades:
+						segOut3 <= "0001000";
+				elsif
+				preaq(3 downto 0) = "0001" then --1
+						segOut3 <= "1111001";
+				elsif
+				preaq(3 downto 0) = "0010" then --2
+						segOut3 <= "1111001";
+				elsif
+				preaq(3 downto 0) = "0011" then --3
+						segOut3 <= "0110000";
+				elsif
+				preaq(3 downto 0) = "0100" then --4
+						segOut3 <= "0011001";
+				elsif
+				preaq(3 downto 0) = "0101" then --5
+						segOut3 <= "0010010";
+				elsif
+				preaq(3 downto 0) = "0110" then --6
+						segOut3 <= "0000010";
+				elsif
+				preaq(3 downto 0) = "0111" then --7
+						segOut3 <= "1111000";
+				elsif
+				preaq(3 downto 0) = "1000" then --8
+						segOut3 <= "0000000";
+				elsif
+				preaq(3 downto 0) = "1001" then --9
+						segOut3 <= "0010000";			
+				else
+						segOut3 <= "1111111"; 	
+				end if;
+				
+				
+			if tempo(7 downto 4) = "0001" then	--1				--Dezenas:
+						segOut4 <= "1111001";
+			else
+						segOut4 <= "1111111";
+						
+			end if;
+		end process;
+		
+		
+		
+		
+		
+		
+
+    process(temperatura)
+    begin
+
+			
+			if temperatura(7 downto 4) = "0001" then --0						--Dezenas:
+						segOut5 <= "1111001";
+				elsif
+				temperatura(7 downto 4) = "0010" then --1
+						segOut5 <= "0010100";
+				elsif
+				temperatura(7 downto 4) = "0011" then --2
+						segOut5 <= "0110000";
+				elsif
+				temperatura(7 downto 4) = "0011" then --3
+						segOut5 <= "0110000";
+				elsif
+				temperatura(7 downto 4) = "0011" then --4
+						segOut5 <= "0110000";
+				elsif
+				temperatura(7 downto 4) = "0011" then --5
+						segOut5 <= "0110000";
+				elsif
+				temperatura(7 downto 4) = "0011" then --6
+						segOut5 <= "0110000";
+				elsif
+				temperatura(7 downto 4) = "0011" then --7
+						segOut5 <= "0110000";
+				elsif
+				temperatura(7 downto 4) = "0011" then --8
+						segOut5 <= "0110000";
+				elsif
+				temperatura(7 downto 4) = "0011" then --9
+						segOut5 <= "0110000";			
+				else
+						segOut5 <= "1111111";
+            end if;
+				
+ 
+			if temperatura(3 downto 0) = "0000" then --0					--Unidades:
+						segOut6 <= "0001000";
+				elsif
+				temperatura(3 downto 0) = "0001" then --1
+						segOut6 <= "1111001";
+				elsif
+				temperatura(3 downto 0) = "0010" then --2
+						segOut6 <= "1111001";
+				elsif
+				temperatura(3 downto 0) = "0011" then --3
+						segOut6 <= "0110000";
+				elsif
+				temperatura(3 downto 0) = "0100" then --4
+						segOut6 <= "0011001";
+				elsif
+				temperatura(3 downto 0) = "0101" then --5
+						segOut6 <= "0010010";
+				elsif
+				temperatura(3 downto 0) = "0110" then --6
+						segOut6 <= "0000010";
+				elsif
+				temperatura(3 downto 0) = "0111" then --7
+						segOut6 <= "1111000";
+				elsif
+				temperatura(3 downto 0) = "1000" then --8
+						segOut6 <= "0000000";
+				elsif
+				temperatura(3 downto 0) = "1001" then --9
+						segOut6 <= "0010000";
+				else
+						segOut6 <= "1111111"; 
+        end if;
+		  
+			if temperatura(11 downto 8) = "0001" then --0						--Centenas:
+						segOut7 <= "1111111";
+				elsif
+				temperatura(11 downto 8) = "0010" then --1
+						segOut7 <= "0010100";
+				elsif
+				temperatura(11 downto 8) = "0011" then --2
+						segOut7 <= "0110000";
+				else
+						segOut7 <= "1111111";
+			end if;
+    end process;
+	 
+end Behavioral;

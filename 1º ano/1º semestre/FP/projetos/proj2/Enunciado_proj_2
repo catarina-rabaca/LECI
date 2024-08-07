@@ -1,0 +1,101 @@
+ENUNCIADO:
+
+
+
+
+
+Introdução
+
+Considere uma aplicação para facilitar o planeamento de viagens. Algumas das funcionalidades mais importantes incluem:
+
+    Conhecer a unidade monetária local.
+    Conhecer o fuso horário.
+    Conhecer os principais pontos turísticos.
+
+Esta informação é relevante para o utilizador decidir de forma informada qual o melhor destino.
+
+Pretendemos desenvolver um programa que obtenha pelo menos algumas destas informações a partir de recursos online para ajudar o utilizador a decidir.
+
+Antes de começar o trabalho, leia o documento sobre como aceder a recursos externos Web em Python.
+
+
+
+
+
+
+
+Tarefa
+
+O programa tem de implementar pelo menos o comportamento básico de obter os principais pontos turísticos.
+
+O programa deve:
+
+    Obter a lista de atrações possíveis processando o ficheiro categories.txt. e guardar a informação numa estrutura de dados adequada.
+
+    Obter do utilizador informações básicas sobre a viagem:
+        A sua localização de partida em latitude e longitude.
+        Quão longe quer viajar em kms.
+        Tipos de atrações que quer visitar. Os tipos têm de ser validados com base na informação lida do ficheiro categories.txt.
+
+    Obter as informações sobre um conjunto de atrações das categorias escolhidas e em volta da sua localização. A informação tem de vir de uma API pública como Places API / Geoapify, ou seja, terá que utilizar a API no URL https://api.geoapify.com/v2/places.
+
+    NOTE: Se usar esse servidor, terá de consultar a documentação e clicar em "Get API key" para criar conta gratuita e um projeto para obter uma apiKey que lhe permitirá aceder à API.
+
+    Analise a documentação, incluindo os parâmetros que serão necessários para filtrar as atrações por categoria e localização.
+
+    Caso não consiga executar o passo 3 com o uso de APIs, pode simular lendo os dados de um ficheiro descarregado previamente. Contudo, nesse caso a nota final do projecto será limitada a 15 valores.
+
+    Processar e mostrar as informações obtidas no passo 3. Deve apresentar pelo menos as seguintes informações:
+        Nome da atração (se não existir, ignore a atração).
+        País.
+        Localização (latitude e longitude).
+        Distância à localização de partida.
+        Outras três informações que considere relevantes.
+
+Tendo em conta a elevada complexidade dos dados, durante o desenvolvimentos deve utilizar técnicas de debugging (pelo menos a utilização da função print) para inspeccionar e compreender a estrutura dos dados.
+
+Em adição ao comportamento básico, é necessário implementar pelo menos uma funcionalidade extra. Exemplos de funcionalidades extra incluem:
+
+    Mostrar ao utilizador estatísticas básicas sobre as informações obtidas, como o número de atrações obtidas, distância média, etc.
+    Permitir ordenar (e/ou filtrar) as informações segundo diversos critérios.
+    Exportar dados sobre as atrações para CSV, ordenados por distância.
+    Outras ideias. Surpreenda-nos!
+
+
+
+
+
+
+
+Regras
+
+    O trabalho deve ser entregue até ao dia 17 de dezembro.
+
+    O trabalho deve ser realizado maioritariamente fora das aulas.
+
+    O trabalho pode e deve ser feito em grupo, sempre que possível. Isso implica que:
+        Devem organizar-se para reunir com regularidade.
+        Todos os membros do grupo devem participar e contribuir ativamente para o trabalho.
+        Todos os membros se responsabilizam igualmente pelo conteúdo do trabalho.
+
+    Se estas condições não estiverem reunidas, os membros devem decidir, com antecedência suficiente, que vão entregar separadamente. Nesse caso, devem registar-se como grupos separados de um elemento e as suas submissões deverão ser originais e distintas.
+
+    Todos os alunos devem registar aqui o seu grupo até ao prazo aí definido.
+
+    Pode incluir o nome do grupo no comentário inicial do programa. Não coloque nomes nem outros elementos identificativos dos autores.
+
+    Deve escrever o seu próprio código de raiz, de forma a compreendê-lo completamente e ser capaz de explicá-lo. Se algum dos autores achar que não conseguiria voltar a escrevê-lo do zero por si próprio, então ainda não o percebeu completamente.
+
+    Pode fazer pesquisas e discutir dúvidas com professores e colegas, mas se adaptar código ou ideias de outros com a sua autorização, tem de os mencionar explicitamente em comentários no programa. No entanto, tenha atenção à regra seguinte.
+
+    Os programas serão comparados entre si e com outros disponíveis publicamente e serão penalizados em função do grau de semelhança encontrado. Cabe a cada um velar pela originalidade do seu trabalho.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
